@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="hello world.bt" id="hw" />
+    <!-- <script> -->
+    <!--
+        html5이상 부터는 script에 javascript 명시 안해줘도 됨!
+        script 안의 내용은 js 형식으로 이해되고 complie 됨
+        script tag 자체 까지는 html 문법, js가 나온다는 것을 알려줌
+
+    -->
+    <script type='text/javascript'>
+        // this is all JAVASCRIPT tag
+        var hw = document.getElementById('hw');
+        hw.addEventListener('click', function(){
+            alert('Hello world');
+        })
+
+    </script>
+</body>
+</html>

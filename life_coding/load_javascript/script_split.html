@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="hello world.bt.hi" id="hw" />
+    <!-- <script> -->
+    <!--
+        html5이상 부터는 script에 javascript 명시 안해줘도 됨!
+        script 안의 내용은 js 형식으로 이해되고 complie 됨
+        script tag 자체 까지는 html 문법, js가 나온다는 것을 알려줌
+
+    -->
+    <script src="./script_split.js">
+    // ./는 같은 동위 directory에서 찾기 위함
+    // 완전히 html과 js를 분리
+    // 하나의 js파일로 동일 기능을 같은 js사용중인 html에 적용하고 유지보수가능
+    // 한번 로드하면 cach영역에 브라우저가 저장해서 각종 비용이 감소
+    // (데이터 latency 등.. 서버 부하 등...)
+
+    // 보통 위치는 body tag 사이에 있음
+    </script>
+</body>
+</html>
