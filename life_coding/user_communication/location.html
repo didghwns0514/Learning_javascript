@@ -1,0 +1,30 @@
+<!-- 
+    현재 사용되고 있는 address의 url을 가져오는 객체 사용법
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(location.toString(), location.href);
+        console.log(location); //different from alert(location);
+        //alert(location); // string으로 바꿔버림
+
+        /*
+            location properties
+            URL 파싱
+        */
+        console.log(location.protocol);
+        console.log(location.host); //name -> ip ::is it self a service
+        console.log(location.port); // :8080 등 // local computer 상에 돌아가는 물리 장치주소
+        console.log(location.pathname); // 로컬에서 특정 정보 주소..
+        console.log(location.search); // ?뒤의 값 -> query..?(전달해서 알고싶은 값..)
+        console.log(location.bookmark); // 페이지에 지정위치로 가게할 수 있는 기능
+    </script>
+</body>
+</html>
