@@ -1,0 +1,28 @@
+<!-- 
+    생활코딩 강좌 26강
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- // : http OR https 등을 자동 load 하는 방식 -->
+    <!-- <script src="//code.jquery.com/jquery-1.11.0.min.js"></script> -->
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script> -->
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <!-- <script type='text/javascript' src="c:\Users\82102\jQuery_lib\jquery.min_1.11_last.js"></script> -->
+    <script>
+        jQuery( document ).ready(function( $ ){
+            // 실제 jquery 들어가는 부분
+            /*
+                body 태그 선택 -> 해당 string을 위치시키도록 한다
+            */
+            $('body').prepend('<h1>Hello world</h1>');
+        });
+    </script>
+</body>
+</html>

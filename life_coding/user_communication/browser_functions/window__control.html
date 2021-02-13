@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <!-- 
+        _self : 현재 script 수행중인 창
+        _blank : 새창
+        "ot" : 이미 열린 창이면 거기서 로드됨
+     -->
+<style type="text/css">li {padding:10px; list-style: none}</style>
+    <!-- only css 문법
+         여기서 li는 선택자(tag)    
+
+         참조 >>>
+         https://www.nextree.co.kr/p8468/
+
+         해당 tag에 style 일괄적용하는 방식
+    -->
+<body>
+<ul> 
+    <!-- 
+        ul(unordered) : 순서 필요없는 목록 
+        ol(ordered) : 순서 있어야 하는 목록
+        dl(definition list) : 용어를 설명하는 목록
+    -->
+
+    <li>
+        <!-- 
+            li : ul / ol / dl 안에 목록 나열할 때 사용하느 
+                 list item의 약어
+
+         -->
+        첫번째 인자는 새 창에 로드할 문서의 URL이다. 인자를 생략하면 이름이 붙지 않은 새 창이 만들어진다.<br />
+        <!-- 
+            br 태그는 여백말고!! 줄바꿈 위한... brasket change?
+             <br/>과 <br />을 사용
+         -->
+        <input type="button" onclick="open1()" value="window.open('demo_newWindow.html');" />
+    </li>
+    <li>
+        두번째 인자는 새 창의 이름이다. _self는 스크립트가 실행되는 창을 의미한다.<br />
+        <input type="button" onclick="open2()" value="window.open('demo_newWindow.html', '_self');" />
+    </li>
+    <li>
+        _blank는 새 창을 의미한다. <br />
+        <input type="button" onclick="open3()" value="window.open('demo_newWindow.html', '_blank');" />
+    </li>
+    <li>
+        창에 이름을 붙일 수 있다. open을 재실행 했을 때 동일한 이름의 창이 있다면 그곳으로 문서가 로드된다.<br />
+        <input type="button" onclick="open4()" value="window.open('demo_newWindow.html', 'ot');" />
+    </li>
+    <li>
+        세번재 인자는 새 창의 모양과 관련된 속성이 온다.<br />
+        <input type="button" onclick="open5()" value="window.open('demo_newWindow.html', '_blank', 'width=200, height=200, resizable=yes');" />
+    </li>
+</ul>
+ 
+<script>
+function open1(){
+    window.open('demo_newWindow.html');
+}
+function open2(){
+    window.open('demo_newWindow.html', '_self');
+}
+function open3(){
+    window.open('demo_newWindow.html', '_blank');
+}
+function open4(){
+    window.open('demo_newWindow.html', 'ot');
+}
+function open5(){
+    window.open('demo_newWindow.html', '_blank', 'width=200, height=200, resizable=no');
+}
+</script>
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> : 이부분 브라우저 창 이름, 헤드 영역에만...
+</head>
+<body>
+    
+</body>
+</html> -->
+
+<!-- 
+    style 태그 3요소
+    1) inline : body tag 안에
+    2) internal : head tag 밑에
+    3) external : 외부 연결
+ -->

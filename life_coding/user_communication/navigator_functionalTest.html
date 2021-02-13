@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            object.keys 라는 메쏘드 검사법
+            브라우저 ECMA5 이전버전일 경우 검사하는 방법
+            -> 기능을 이에 따라서 맞추도록 한다
+        
+            From 
+            https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
+        */
+
+        if (!Object.keys) { 
+            // exist -> rtn : True / else : False -> 없을 시 돌리기 위함
+            // object 만들려고 하는 듯....?
+        Object.keys = 
+        (function () 
+            {
+            'use strict'; //ES5 키워드, 안전코딩위한 가이드라인
+                          // 더 나은 오류 검사 위함
+                          // 엄격한 경우 통과 시에만... 코드 동작
+                          // 함수 밖에서 선언하면 js 전역에 적용
+                          // 함수 안에서 선언하면 function 내부에서만 적용
+            
+            // prototype 이용해 object 객체를 사용해 전역참조할 property 원본 instance 값을 수정
+            var hasOwnProperty = Object.prototype.hasOwnProperty,
+                hasDontEnumBug = !({toString: null}).propertyIsEnumerable('toString'),
+                dontEnums = [
+                'toString',
+                'toLocaleString',
+                'valueOf',
+                'hasOwnProperty',
+                'isPrototypeOf',
+                'propertyIsEnumerable',
+                'constructor'
+                ],
+                dontEnumsLength = dontEnums.length;
+        
+                return function (obj) {
+                if (typeof obj !== 'object' && (typeof obj !== 'function' || obj === null)) {
+                    throw new TypeError('Object.keys called on non-object');
+                }
+            
+                var result = [], prop, i;
+            
+                for (prop in obj) {
+                    if (hasOwnProperty.call(obj, prop)) {
+                    result.push(prop);
+                    }
+                }
+            
+                if (hasDontEnumBug) {
+                    for (i = 0; i < dontEnumsLength; i++) {
+                    if (hasOwnProperty.call(obj, dontEnums[i])) {
+                        result.push(dontEnums[i]);
+                    }
+                    }
+                }
+                return result;
+                };
+            }()
+        );
+        }
+
+
+    </script>
+</body>
+</html>

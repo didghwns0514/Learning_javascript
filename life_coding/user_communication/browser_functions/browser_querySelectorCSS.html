@@ -1,0 +1,46 @@
+<!-- 
+    생활코딩 강좌 25강
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        query selecter는 css 속성 이용
+     -->
+
+     <ul>
+         <li>HTML</li>
+         <li class="make_Green">CSS</li>
+         <li class="make_Green">JavaScript</li>
+     </ul>
+
+     <ol>
+        <li>HTML</li>
+        <li class="make_Green">CSS</li>
+        <li class="active">JavaScript</li>
+     </ol>
+
+     <script>
+         // document.querySelectorAll -> 모든 개체 list like로 돌려줄듯
+         // element 중 첫 li 선택해서 개체로 돌려줌
+         var li = document.querySelector('li');
+         li.style.color = 'red';
+
+         // .이 앞에 붙어있다 -> element 속성이 class로 부여되었을 때
+         var li_2 = document.querySelector('.active');
+         li_2.style.color = 'blue';
+        
+         // 유사 배열로 return...
+         var li_3 = document.querySelectorAll('.make_Green');
+         for(var k=0; k < li_3.length; k++){
+             li_3[k].style.color = 'green';
+         }
+     </script>
+</body>
+</html>

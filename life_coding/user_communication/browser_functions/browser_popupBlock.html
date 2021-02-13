@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 이상태로는 브라우저에서 문제 안발생 하려고 새탭 안띄우게 됨
+        // 보안적인 측면에서 browser를 새로 open할 시 local에서 돌아가는 것들이 많음
+        // 같은 domain에서의 팝업을 허용하는 식으로 해결
+
+        // button click과 같은 명시적인 경우 가능
+        window.open('demo_newWindow');
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>HTML</li>
+        <li id='active'>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+
+    <script>
+        // ID로 조회, list like로 돌려주지 않고...
+        // ID는 '완전 고유' 값이다 -> 그래서 바로 객체를 돌려줌
+        var li = document.getElementById('active');
+        li.style.color = 'red';
+
+    </script>
+</body>
+</html>
