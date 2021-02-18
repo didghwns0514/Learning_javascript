@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a id="anchour" href="http://opentutorials.org">opentutorials</a>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li id="list">JavaScript</li>
+    </ul>
+    <input type="button" value="button" id="button" />
+    <script>
+        var target = document.getElementById('list');
+        console.log(target.constructor.name); //htmlelement
+
+        var target = document.getElementById('anchour');
+        console.log(target.constructor.name); //htmlanchorelement
+
+        var target = document.getElementById("button");
+        console.log(target.constructor.name); //htmlinputelement
+    </script>
+</body>
+</html>
