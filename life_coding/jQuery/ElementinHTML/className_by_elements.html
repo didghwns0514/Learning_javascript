@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li class="marked">html</li>
+        <li>css</li>
+        <li id="active">JavaScript
+            <ul>
+                <li>JavaScript Core</li>
+                <li class="marked">DOM</li>
+                <li class="marked">BOM</li>
+            </ul>
+        </li>
+    </ul>
+    <script>
+        var list = document.getElementsByClassName('marked');
+        //  documnet로 조회시 전체 문서에서 조회된다
+
+        console.group('document');
+        for(var i=0; i<list.length; i++){
+            console.log(list[i].textContent);
+        }
+        console.groupEnd();
+         
+        console.group('active');
+        // Javascript 만 select 된다 여기 안에 sub만 조회
+        var active = document.getElementById('active');     
+        var list = active.getElementsByClassName('marked');
+        for(var i=0; i<list.length; i++){
+            console.log(list[i].textContent);
+        }
+        console.groupEnd();
+    </script>
+</body>
+</html>

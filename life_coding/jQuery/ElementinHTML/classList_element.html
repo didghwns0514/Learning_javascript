@@ -1,0 +1,39 @@
+<!-- 
+    한번에 class 선택 (존재하는 애들을 가져오는 등)
+    일괄처리 loop등 이용하여 control하기 위한 property
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+ </head>
+ <body>
+    <ul>
+        <li>html</li>
+        <li>css</li>
+        <!-- class 띄워서 여러 이름 할당 가능
+        제어대상 group만들기 위함 -->
+        <li id="active" class="important current">JavaScript</li>
+    </ul>
+    <script>
+    function loop(){
+        for(var i=0; i<active.classList.length; i++){
+            console.log(i, active.classList[i]);
+        }
+    }
+    // 클래스를 추가
+    </script>
+    <input type="button" value="DOMTokenList" onclick="console.log(active.classList);" />
+    <input type="button" value="조회" onclick="loop();" />
+    <input type="button" value="추가" onclick="active.classList.add('marked');" />
+    <input type="button" value="제거" onclick="active.classList.remove('important');" />
+    <input type="button" value="토글" onclick="active.classList.toggle('current');" />
+    <!-- 토글을 통해서 on/off 가능
+        add / remove는 존재 / 비존재일 때 동작
+    -->
+ </body>
+ </html>
