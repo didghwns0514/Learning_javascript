@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="start">
+    <ul>
+        <li><a href="./532">html</a></li>
+        <li><a href="./533">css</a></li>
+        <li><a href="./534">JavaScript</a>
+            <ul>
+                <li><a href="./535">JavaScript Core</a></li>
+                <li><a href="./535">DOM</a></li>
+                <li><a href="./535">BOM</a></li>
+            </ul>
+        </li>
+    </ul>
+    
+    <script>
+        var s = document.getElementById('start'); // body element
+        console.log(1, s.firstChild); //첫 element
+                                      // first 공백 줄바꿈 선택
+                                      // 줄바꿈 없으면 다음 element 선택됨
+        // 모든 select 된 객체는 node상속이므로 같은 node API 사용가능
+        // method / property 쓸 수 있음
+        console.log(1, s.firstChild.nextSibling);
+        console.log(1, s.firstChild.nextSibling.nextSibling);
+        console.log(1, s.firstChild.nextSibling.nextSibling.nextSibling);
+
+        var ul = s.firstChild.nextSibling;
+        console.group('ul dom')
+        console.log(2,ul);
+        console.log(2,ul.nextSibling);
+        console.log(2,ul.nextSibling.nextSibling);
+
+        //child nodes -> 유사 배열
+        //length로 길이 가져와서 for loop 탐색 가능
+        console.log(2, ul.childNodes.length)
+        console.log(2,ul.childNodes);
+        console.log(2,ul.childNodes[1]);
+        console.log(2,ul.parentNode);
+        console.groupEnd()
+    </script>
+
+</body>
+</html>

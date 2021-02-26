@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="start">
+    
+    <ul>
+        <li><a href="./532">html</a></li> 
+        <li><a href="./533">css</a></li>
+        <li><a href="./534">JavaScript</a>
+            <ul>
+                <li><a href="./535">JavaScript Core</a></li>
+                <li><a href="./536">DOM</a></li>
+                <li><a href="./537">BOM</a></li>
+            </ul>
+        </li>
+    </ul>
+
+    <script>
+        // Traverse 함수 먼저 선언, script인데 위에서 부터 해석(완전 순차적)
+        // onload라는 걸 쓰는게 아니면...
+        // function traverse(target, callback){
+        //     if(target.nodeType === 1){ // element type
+        //         //if(target.nodeName === 'A')
+        //         callback(target);
+        //         var c = target.childNodes;
+        //         for(var i=0; i<c.length; i++){
+        //             traverse(c[i], callback);       
+        //         }   
+        //     }
+        // }
+
+        const traverse = (target, callback) => {
+            if (target.nodeType ===1){ // element만 조회
+                callback(target);
+            }
+            var c = target.childNodes;
+            for(var a=0; a < c.length; a++){
+                traverse(c[a], callback)
+            }
+        }
+        // traverse(document.getElementById('start'), function(elem){
+        //     console.log(elem);
+        // });
+        traverse(document.getElementById('start'), elem=>console.log(elem));
+        
+        </script>
+
+</body>
+</html>

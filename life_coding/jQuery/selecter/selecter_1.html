@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li class="marked">html</li>
+        <li>css</li>
+        <li id="active">JavaScript
+            <ul>
+                <li>Javascript Core</li>
+                <li class="marked">DOM</li>
+                <li class="marked">BOM</li>
+            </ul>
+        </li>
+    </ul>
+ 
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script>
+        // 선택자 역순 배열임, active 조회하고 marked 조회
+        //$(".marked", "#active").css("background-color","red");
+        
+        // 한번에 이렇게 해도 됨
+        //$("#active .marked").css("background-color","red");
+
+        // casecade로 처리하려면
+        $('#active').css('color','blue').find('.marked').css('background-color','red');
+
+    </script>
+</body>
+</html>
