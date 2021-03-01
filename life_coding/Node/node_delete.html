@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li id="target">JavaScript</li>
+    </ul>
+
+    <input type="button" onclick="callRemoveChild();" value="removeChild"/>
+    <input type="button" onclick="callReplaceChild();" value="replaceChild"/>
+
+    <script src='//code.jquery.com/jquery-1.11.0.min.js'></script>
+    <script>
+        /*
+            ger parent, replace child 등으로 편리하게 
+            Node 수정하면 됨
+        */ 
+
+
+        function callRemoveChild() {
+            var target = document.getElementById('target');
+            target.parentNode.removeChild(target);
+        }
+
+        function callReplaceChild() {
+            var target = document.getElementById('target')
+            if(target.textContent === "NodeJs"){target.textContent ="JavaScript"}
+            else{target.textContent = "NodeJs"}
+
+        }
+    </script>
+</body>
+</html>

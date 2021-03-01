@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <body>
+        <div id="target1" class="target">
+            target1
+        </div>
+
+        <div id="source1">
+            source1
+        </div>
+        <div id="source2">
+            source2
+        </div>
+
+        <input type="button" value="append source1 to target1" id="btn1" />
+        <input type="button" value="append source2 to target1 as copy" id="btn2" />
+
+
+        <script src='//code.jquery.com/jquery-1.11.0.min.js'></script>
+        <script>
+            // 제어 대상을 집어넣기
+            $('#btn1').click(function(){
+                $('#target1').append(
+                    $('#source1'));
+            })
+
+            $('#btn2').click(function (){
+                $('#target1').append(
+                    $('#source2').clone());
+            })
+
+        </script>
+    </body>
+</html>

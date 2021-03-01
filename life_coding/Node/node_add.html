@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id='target'>
+        <li>HTML</li>
+        <li>CSS</li>
+    </ul>
+
+    <input type="button" onclick="callAppendChild();" value="append child" />
+    <input type="button" onclick="callInsertBefore();" value="insert before child" />
+
+    <script>
+        const callAppendChild = function() {
+            var target = document.getElementById('target');
+            var li = document.createElement('li');
+            var text = document.createTextNode('JavaScript');
+
+
+            li.appendChild(text);
+            target.appendChild(li);
+        }
+
+        const callInsertBefore = function() {
+            var target = document.getElementById('target');
+            var li = document.createElement('li');
+            var text = document.createTextNode('JavaQuery');
+
+            li.appendChild(text);
+            target.insertBefore(li, target.firstChild);
+        }
+    </script>
+</body>
+</html>
