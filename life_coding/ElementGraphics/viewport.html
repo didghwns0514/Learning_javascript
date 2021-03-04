@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <body>
+    <style>
+        body{
+            padding:0;
+            margin:0;
+        }
+        div{
+            border:50px solid #1065e6;
+            padding:50px;
+            margin:50px;
+        }
+        #target{
+            width:100px;
+            height:2000px;
+            /* border:50px solid #1065e6;
+            padding:50px;
+            margin:50px; */
+        }
+        </style>
+        <table>
+            <tr><td>
+                <div>
+                    <div id="target">
+                        Coding
+                    </div>
+
+                </div>
+            </td></tr>
+        </table>
+
+
+            <div>
+            <div id="target"> 
+                <!-- div tag is used as the 
+                    logical division with in the html document -->
+                Coding
+            </div>
+            </div>
+            <script>
+                var t = document.getElementById('target');
+                setInterval(function(){
+
+                    // div로 나눈 bounding, target
+                    console.log('getBoundingClientRect : ',
+                    t.getBoundingClientRect().top,
+                    
+                    // window 전체 y축 offset의미
+                    'pageYOffset : ', window.pageYOffset);
+                }
+
+                , 1000)
+            </script>
+        </body>
+    </html>

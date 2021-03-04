@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <body>
+        <ul>
+            <li id="target">html</li> 
+            <li>css</li>
+            <li>JavaScript</li>
+        </ul>
+        <script>
+            var t = document.getElementById('target').firstChild;
+            
+            // 실제 값 출력 부분
+            // 둘다 사용 가능, 실제 데이터는 텍스트 부분에 저장되는 것
+            console.log(t.nodeValue);
+            console.log(t.data);
+        </script>
+    </body>
+</html>
