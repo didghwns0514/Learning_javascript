@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style></style>
+</head>
+    <body>
+        <input type="button" id="target" value="button">
+
+        <script>
+            var t = document.getElementById('target');
+
+            // functino attached to "onclick" is -> "EVENT HANDLER"
+            t.onclick = function (event) { // method overriding??
+                // event PARM 은 넣어주어도 되고 아니어도 되는데
+                // 넣어주면 이벤트를 받아온다 (어떤게 trigger였는지)
+                alert('hello!, ' + event.target.value );
+
+                if(event){
+                    console.log(event)
+                    // event 관련 정보 전체 돌려줌... 
+                    // 그중 .target.value로 tab 정보 access 가능
+                    // tag 속성은 다 .target.[...] 로 access 가능...!
+                }
+            }
+        </script>
+    </body>
+</html>
