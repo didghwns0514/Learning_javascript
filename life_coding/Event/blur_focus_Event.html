@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style></style>
+</head>
+    <body>
+        <input id="target" type="name" />
+        <script>
+        var t = document.getElementById('target');
+
+        // focus가 빠질 때
+        t.addEventListener('blur', function(event){
+            alert('blur');  
+        });
+
+        // focus까 추가되었을 때
+        t.addEventListener('focus', function(event){
+            alert('focus'); 
+        });
+        </script>
+    </body>
+</html>

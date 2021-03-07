@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style></style>
+</head>
+    <body>
+        <!-- 
+            form 사용자가 서버에 전달할 때 쓰는 tag
+         -->
+        <form id="target" action="result.html">
+            <label for="name">name</label> <input id="name" type="name" />
+            <input type="submit" />
+        </form>
+        <script>
+        var t = document.getElementById('target');
+        t.addEventListener('submit', function(event){
+            if(document.getElementById('name').value.length === 0){
+                alert('Name 필드의 값이 누락 되었습니다');
+                event.preventDefault();
+            }
+        });
+        </script>
+    </body>
+</html>

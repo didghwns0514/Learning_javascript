@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style></style>
+</head>
+    <body>
+        <fieldset>
+            <legend>event propagation</legend>
+            <input type="button" id="target" value="target">          
+        </fieldset>
+
+        <script>
+        function handler(event){
+            var phases = ['capturing', 'target', 'bubbling']
+
+            // event phase 자체는 event call 순서 담고 있다
+            // 어떤 tag에서 동작하는지 알기 위함
+            console.log(event.target.nodeName, this.nodeName, phases[event.eventPhase-1]);
+        }
+
+        function stopHandler(event){
+            var phases = ['capturing', 'target', 'bubbling']
+            console.log(event.target.nodeName, this.nodeName, phases[event.eventPhase-1]);
+            event.stopPropagation(); // 전파 stop하기 위함, 이 handler까지만 동작
+        }
+        /*
+            capturing -> 상위 event lisenter가 먼저 calling되고 하위로 갈 수록, 전파되는 형식
+                => event listener 마지막 인자를 true
+
+            bubbling -> 아마, 전파 시작되자마자 trigger 할 event handler 바로 사용할 때 편리해서..?
+                        + 모든 브라우저에서 사용가능, capturing은 과거 브라우저 안되는 경우 있음
+                        + default false 일듯?
+                => event listener 마지막 인자를 flase [use capturing field]
+            event.target은 항상 event listener가 붙어있는 최하위단에 붙어있게 된다
+        */
+        document.getElementById('target').addEventListener('click', handler, false);
+        document.querySelector('fieldset').addEventListener('click', handler, false);
+        document.querySelector('body').addEventListener('click', stopHandler, false);
+        document.querySelector('html').addEventListener('click', handler, false);
+        </script>
+    </body>
+</html>
