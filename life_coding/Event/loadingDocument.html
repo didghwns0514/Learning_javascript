@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style></style>
+
+    <script>
+        // property로 onload 끝나고 수행하려고 할 때...
+
+        // window.onload = function(){
+        // var t = document.getElementById('target');
+        // console.log(t);
+        // }
+        
+        
+        // event listener로 동작
+        // window.addEventListener('load', function(){
+        // var t = document.getElementById('target');
+        // console.log(t);
+        // }
+        // )
+
+        // event listener인데, loading기다리면서 html먼저 로딩 할 때
+        window.addEventListener('DOMContentLoaded', function(){
+        var t = document.getElementById('target');
+        console.log(t);
+        }
+        ) 
+    </script>
+</head>
+    <body>
+        <p id="target">Hello</p>
+        <img src="https://s3-ap-northeast-1.amazonaws.com/opentutorialsfile/course/94.png"
+    </body>
+</html>
