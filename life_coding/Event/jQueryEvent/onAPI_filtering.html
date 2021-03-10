@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            color:white;            
+        }
+    </style>
+</head>
+    <body>
+        <ul>
+            <li><a href="#">HTML</a></li>
+            <li><a href="#">CSS</a></li>
+            <li><a href="#">JavaScript</a></li>
+        </ul>
+        
+        <script src='//code.jquery.com/jquery-1.11.0.min.js'></script>
+        <script>
+            // filter 걸면 -> ul 밑에 a / li 에 대한 event listener 생성
+            // ul 대신 body 등도 가능(load 미리 되는 경우에도 사용)
+            /*
+                $('body').on('click', 'a, li', function(event){
+                    console.log(this.tagName);
+                })
+            */
+            $('ul').on('click', 'a, li', function(event){
+                console.log(this.tagName);
+            })
+        </script>
+</html>

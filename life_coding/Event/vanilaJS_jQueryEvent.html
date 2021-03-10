@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style></style>
+</head>
+    <body>
+        <input type="button" value="vanilla" id="vanilla">
+        <input type="button" value="jQuery" id="jQuery">
+        
+        <script src='//code.jquery.com/jquery-1.11.0.min.js'></script>
+        <script>
+            
+            var $btn_jQuery = $('#jQuery').on('click', function(event){
+
+                alert('this is jQuery!');
+                
+                console.log(this)
+                console.log('check output!')
+
+            })
+
+        </script>
+    </body>
+</html>

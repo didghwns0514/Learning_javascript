@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            color: coral;
+        }
+    </style>
+</head>
+    <body>
+        <input type="button" value="remove" id="remove" />
+        <input type="text" id="target">
+
+        <p id="status"></p>
+
+        <script src='//code.jquery.com/jquery-1.11.0.min.js'></script>
+        <script>
+            let status = function (e){
+                $('#status').text($('#target').val() + Math.random())
+            };
+            $('#target').on('focus blur', status);
+            $('#remove').on('click', function(e){
+            $('#target').off('focus');
+            });
+        </script>
+    </body>
+</html>

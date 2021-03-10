@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+    <body>
+        <input type="text" id="target">
+        <p id="status"></p>
+
+        <script src='//code.jquery.com/jquery-1.11.0.min.js'></script>
+        <script>
+            /*
+            [json 형태로 전달하는 법 -> css와 비슷]
+            */
+
+            let handler = function(e){
+                $('#status').html(e.type);
+            }
+
+            $targ = $('#target').on({
+                'focus': handler,
+                'blur' : handler
+            })
+
+            /*
+            [Chaining method]
+            $('#target').on('focus', handler).on("blur", handler);
+            */
+
+
+
+            /*
+            [띄어쓰기로 인자 여러개 주는 법]
+            //////////////////////////////////////
+            // focus blur : 두개 event로 추가 됨
+            $targ = $('#target').on('focus blur', function(event){
+                $('#status').html(event.type);
+            })
+            */
+        </script>
+    </body>
+</html>
