@@ -1,0 +1,87 @@
+<!-- 
+
+    Ajax :
+    asynchronus javascript and Xml
+    비동기로 작업 수행 가능하게 해주는 것
+    서버에서 자료 받아올 때 반드시 수행되어야 하는 부분이 아닌 영역들을
+    나중에 따른 request를 받으면 비동기로 처리하여
+    그부분만 업데이트 해주는 방식으로 사용자에게 표시
+
+    json / xml 등으로 서버와 비동기 통신
+
+ -->
+
+ <!DOCTYPE html>
+ <html lang="ko">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <style></style>
+ </head>
+     <body>
+        <p>time : <span id="time"></span></p>
+        <input type="button" id="execute" value="execute" />
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'></script>
+        <script>
+        
+        /*
+            https://opentutorials.org/module/904/6843
+        */
+
+        document.querySelector('input').addEventListener('click', function(event){
+            var xhr = new XMLHttpRequest();
+
+            // get 방식으로 데이터 받아온다고 알려줌... 이거 잘 이해가..?
+            // FORM과 동일한 방식 
+            // <for method="GET" action="http://192.168.0.4:8000/parseapp/test">
+            xhr.open('GET', 'http://192.168.0.4:8000/parseapp/test');
+            // 서버 / 클라이언트 통신에 방식이 있다.
+            // 각 state 과정 변화를 탐지 하는게 onreadystatechange property임
+            xhr.onreadystatechange = function(){
+                // 통신이 끝난 경우가 4번(완료된 것) === readyState
+                // status : 통신의 결과 -> 200은 완료, 404 not found
+                if(xhr.readyState === 4 && xhr.status === 200){
+                    document.querySelector('#time').innerHTML = xhr.responseText;
+                }
+            }
+            xhr.send(); 
+
+        }); 
+
+        /*
+            참조 (reference)
+            https://primrose.tistory.com/55
+            https://likelion-kgu.tistory.com/41
+        */
+
+        // let timeEvent = function (e){
+        //     $.ajax({
+        //         url : 'http://192.168.0.4:8000/parseapp/test',
+        //         dataType : 'json',
+        //         success : function(data){
+        //             var str = '';
+        //             alert('ajax sucees : 통신성공!');
+                    
+        //             console.group('통신결과');
+        //             console.log('data : ', data);
+        //             console.groupEnd();
+
+        //             $('#time').html(data['time']);
+
+        //         },
+        //         error : function(request, status, error) {
+        //             alert('ajax failed : 통신실패!')
+        //         }
+                
+        //     })
+        // };
+
+        // $('document').ready( function(){
+        //     $('#execute').on({
+        //         'click' : timeEvent});
+        // })
+
+        </script> 
+     </body>
+ </html>
