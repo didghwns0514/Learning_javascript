@@ -1,0 +1,25 @@
+{
+  "name": "ellie_coding",
+  "version": "1.0.0",
+  "description": "node.js study project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/didghwns0514/Learning_javascript.git"
+  },
+  "keywords": [
+    "node.js"
+  ],
+  "author": "HJYang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/didghwns0514/Learning_javascript/issues"
+  },
+  "homepage": "https://github.com/didghwns0514/Learning_javascript#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
