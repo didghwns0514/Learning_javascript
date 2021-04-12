@@ -1,0 +1,21 @@
+{
+    "jshint.exclude": {
+
+
+    
+    },
+    "jshint.options":{
+        "esversion": 6
+    },
+
+    
+    "eslint.runtime": "",
+    "eslint.options" : {
+        "env":{
+            "es6":true
+        },
+        "parserOptions":{
+            "ecmaVersion":7
+        }
+    }
+}
