@@ -82,13 +82,13 @@ const cook = (egg) => {
     }, 1000);
   });
 };
-
+console.log('333')
 getHen() // 자체가 Promise가 아니고, 함수가 수행되어야 Promise를 받으므로
-  .then(hen => getEgg(hen))
+  .then(getEgg)
   .catch(error => {
     console.log('for fallback : ',error);
     return 'Bread!';
   })
-  .then(egg => cook(egg))
-  .then(meal => console.log(meal))
-  .catch(egg => console.log(egg));
+  .then(cook)
+  .then(console.log)
+  .catch(console.log);
