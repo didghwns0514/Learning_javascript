@@ -81,7 +81,7 @@ async function getBanana(){
 // pick_fruit_badExample().then(console.log);
 
 
-async function pick_fruit_goodExample(){ 
+async function pick_fruit_goodExample(){  
 
   try{
     const apple_promise = getApple(); // 여기서 내부 코드 바로 수행
